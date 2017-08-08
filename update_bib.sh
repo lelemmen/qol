@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Script that replaces the location of
+### Script that replaces the name of a bib file reference to
 #	$1: bib_file
 ### in all .tex files, given the directory
 #	$2: SEARCH_DIR .
@@ -30,7 +30,7 @@ for TEX_FILE in $(find ${SEARCH_DIR} ! -regex ".*\.bak"); do
 		sed -i".bak" "s/\bibliography{.*_bib}/\bibliography{${bib_file}}/g" ${TEX_FILE} 
 	
 		# sed -i"${SED_BACKUP_DIR}/*.bak" ---- doesn't work, so we will move the backup files to the designated folder ourselves
-		# if an identically named filed is already in the SED_BACKUP_DIR, we will overwrite it
+		# if an identically named file is already in the SED_BACKUP_DIR, we will overwrite it
 		if [ -f ${SED_BACKUP_DIR}/"*{TEX_FILE}.bak" ]; then
 			rm ${SED_BACKUP_DIR}/"*{TEX_FILE}.bak"
 		fi
