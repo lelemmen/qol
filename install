@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+## Depending on the number of parameters, INSTALL_DIR is different
+case "$#" in
+	# With no given arguments, I assume that the user also has set a SOFTWARE_DIR
+	0)	INSTALL_DIR=${SOFTWARE_DIR}/bin 		;;
+
+	# If only one argument is given, it is INSTALL_DIR
+	1)	INSTALL_DIR="$1"				;;
+
+	*)	echo "Illegal number of parameters: '$#'"	;;
+esac
+echo "Symlinks will be installed in : ${INSTALL_DIR}"
+
+for qolscript in $(ls *.sh); do
+	# Extract the base name of the scripts, since we want to call "foo" instead of "foo.sh"
+	basename=$(basename "${qolscript}" .sh)
+
+	# Using PWD here: just cd into the git directory, ok? ...
+	ln -sfv ${PWD}/${qolscript} ${INSTALL_DIR}/${basename}
+done
