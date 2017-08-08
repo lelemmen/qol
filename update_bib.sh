@@ -5,9 +5,6 @@
 ### in all .tex files, given the directory
 #	$2: SEARCH_DIR .
 
-### Flags:
-#	-r:	search recursively in SEARCH DIR
-
 
 ## Extract the arguments
 bib_file=$1
