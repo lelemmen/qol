@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ## Depending on the number of parameters, INSTALL_DIR is different
 case "$#" in
 	# With no given arguments, I assume that the user also has set a SOFTWARE_DIR
@@ -13,6 +12,7 @@ case "$#" in
 esac
 echo "Symlinks will be installed in : ${INSTALL_DIR}"
 
+## Make symlinks for every script
 for qolscript in $(ls *.sh); do
 	# Extract the base name of the scripts, since we want to call "foo" instead of "foo.sh"
 	basename=$(basename "${qolscript}" .sh)
