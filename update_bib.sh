@@ -21,8 +21,8 @@ fi
 ## Replace the current line in which the .bib-file is specified with the new name, for all files in SEARCH_DIR
 counter=0
 
-# Ignore any .bak files
-for TEX_FILE in $(find ${SEARCH_DIR} ! -regex ".*\.bak"); do
+# Only find files, only find .tex files, ignore any .bak files, ignore files in build directories
+for TEX_FILE in $(find ${SEARCH_DIR} -type f -regex ".*\.tex" ! -regex ".*\.bak" ! -regex ".*/build/.*"); do 
 	if [ -f ${TEX_FILE} ]; then
 		echo "Replacing in ${TEX_FILE}..."
 
