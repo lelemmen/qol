@@ -22,10 +22,10 @@ cp -R ./cmake ${project_dir}
 # Copy and edit (no backup, replace 'project_name' by its actual value) the CMakeLists template
 cp CMakeLists_template.txt ${project_dir}/CMakeLists.txt
 echo "Updating CMakeLists ..."
-sed -i ""  "s/.*project_name.*/${project_name}/g" ${project_dir}/CMakeLists.txt
+sed -i ""  "s/project_name/${project_name}/g" ${project_dir}/CMakeLists.txt
 
 
 ## LaTeX
 # Copy the LaTeX template
-echo "Copying the LaTeX template."
+echo "Copying the LaTeX template ..."
 cp template.tex ${project_dir}/${project_name}.tex
