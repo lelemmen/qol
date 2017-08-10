@@ -16,13 +16,16 @@ project_dir=$2
 
 ## CMake
 # Copy the cmake dir to project_dir (this directory contains UseLatex.cmake)
+echo "Copying cmake files ..."
 cp -R ./cmake ${project_dir}
 
 # Copy and edit (no backup, replace 'project_name' by its actual value) the CMakeLists template
 cp CMakeLists_template.txt ${project_dir}/CMakeLists.txt
-sed -i"" "s/.*project_name.*/${project_name}/g" ${TEX_FILE}
+echo "Updating CMakeLists ..."
+sed -i ""  "s/.*project_name.*/${project_name}/g" ${project_dir}/CMakeLists.txt
 
 
 ## LaTeX
 # Copy the LaTeX template
-cp tex_template.tex ${project_dir}/${project_name}.tex
+echo "Copying the LaTeX template."
+cp template.tex ${project_dir}/${project_name}.tex
