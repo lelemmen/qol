@@ -58,7 +58,7 @@ arguments = parser.parse_args()
 bib_name = arguments.bib_name
 search_dir = arguments.search_dir
 
-# if bib_name ends with .bib, remove it (as it shouldn't be included in the .tex file)
+# if bib_name ends with .bib, remove it
 bib_name = bib_name.replace('.bib', '')
 
 
@@ -68,21 +68,19 @@ if not os.path.isdir(backup_dir):
     os.mkdir(backup_dir)
 
 
+# Specification of all patterns (list values) and replace_withs (single values) for all extensions (keys)
+pattern_dict = {'.tex': [re.compile(r'\\bibliography{.*\.bib}.*'), re.compile(r'\\bibliography{.*_bib}.*')],
+                'CMakeLists.txt': [re.compile(r'BIBFILES.*\.bib')]}
+replace_with_dict = {'.tex': r'\\bibliography{{{}}}'.format(bib_name),
+                     'CMakeLists.txt': r'BIBFILES {}'.format(bib_name + '.bib')}
+# no extension (.bib) in the tex replacements, extension (.bib) in CMakeLists
+
+
 print("Replacing bib-file occurrences with the newly provided bib-file name ...")
-# Create the patterns and supply a replace_with pattern for .tex files
-tex_dotbib_pattern = re.compile(r'\\bibliography{.*\.bib}.*')
-tex_underscorebib_pattern = re.compile(r'\\bibliography{.*_bib}.*')
-tex_replace_with = r'\\bibliography{{{}}}'.format(bib_name)
 
 # Do the actual in-place substitutions for .tex-files
-all_file_substitute(tex_dotbib_pattern, tex_replace_with, '.tex', search_dir, backup_dir)
-all_file_substitute(tex_underscorebib_pattern, tex_replace_with, '.tex', search_dir, backup_dir)
-
-# Create the patterns and supply a replace_with pattern for CMakeLists.txt
-cmakelists_pattern = re.compile(r'BIBFILES.*\.bib')
-cmakelists_replace_with = r'BIBFILES {}'.format(bib_name + '.bib')       # there should be an extension .bib in CMakeLists
-
-# Do the actual in-place substitutions for CMakeLists.txt-files
-all_file_substitute(cmakelists_pattern, cmakelists_replace_with, 'CMakeLists.txt', search_dir, backup_dir)
+for file_extension in ['.tex', 'CMakeLists.txt']:
+    for pattern in pattern_dict[file_extension]:
+        all_file_substitute(pattern, replace_with_dict[file_extension], file_extension, search_dir, backup_dir)
 
 print("Done.")
