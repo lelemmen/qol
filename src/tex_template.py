@@ -23,7 +23,7 @@ arguments = parser.parse_args()
 project_name = arguments.project_name
 project_dir = arguments.project_dir
 
-# Find out the directory in which the QoL scripts are
+# Find out the directory in which the QoL scripts are, in order to locate CMakeLists_template.txt
 this_script_dir = os.path.dirname(os.path.realpath(__file__))    # directory that contains this file, resolving any symlinks
 qol_dir = '/'.join(this_script_dir.split('/')[:-1])
 
