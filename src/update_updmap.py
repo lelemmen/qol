@@ -9,9 +9,11 @@ updmap_path = '/opt/local/var/db/texmf/web2c/updmap.cfg'
 
 
 print("Updating updmap ... ")
-subprocess.call("updmap-sys --enable Map=MinionPro.map", shell=True)        # shell=True is needed for passing strings
+subprocess.call(['updmap-sys', '--enable', 'Map=MinionPro.map'])
+
 
 print("Updating the texlive-tree ... ")
-subprocess.call("sudo mktexlsr $(kpsewhich -var TEXMFLOCAL)", shell=True)
+subprocess.call(['sudo', 'mktexlsr', '$(kpsewhich -var TEXMFLOCAL)'])
+
 
 print("Done.")
