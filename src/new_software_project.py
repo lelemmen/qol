@@ -37,7 +37,7 @@ else:
     SOFTWARE_DIR = os.environ['SOFTWARE_DIR']
 
 
-# Create the directory tree
+# Create the directory tree: this doesn't overwrite anything
 print("Making a new software project: '{}'".format(project_name))
 
 os.mkdir(SOFTWARE_DIR + '/' + project_name)
