@@ -17,6 +17,13 @@ Given a compressed file COMPRESSED_FILE, tries to extract it:
     extract COMPRESSED_FILE
 
 
+fix_sharedrop
+-------------
+**macOS only**. We've all encountered the bug that Share -> AirDrop doesn't work, or something is just missing from the Share-> menu. Running this script fixes the issue:
+
+    fix_sharedrop
+
+
 
 new_software_project
 ----------------------
