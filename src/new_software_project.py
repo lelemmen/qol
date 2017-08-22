@@ -5,13 +5,16 @@
 # The template looks as follows:
 # 	project_name
 #       |
-#       |_____src
+#       |_____build
 #       |
 #       |_____docs
 #       |
-#       |_____tests
+#       |_____include
 #       |
-#       |_____build
+#       |_____src
+#       |
+#       |_____tests
+
 
 
 import argparse
@@ -45,5 +48,6 @@ os.mkdir(SOFTWARE_DIR + '/' + project_name + '/' + 'src')
 os.mkdir(SOFTWARE_DIR + '/' + project_name + '/' + 'docs')
 os.mkdir(SOFTWARE_DIR + '/' + project_name + '/' + 'tests')
 os.mkdir(SOFTWARE_DIR + '/' + project_name + '/' + 'build')
+os.mkdir(SOFTWARE_DIR + '/' + project_name + '/' + 'include')
 
 print("Done.")
