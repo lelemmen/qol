@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 
-print("""                                                                                                                  
-                                                                                                                      
+print("""                                                                                                       
    SSSSSSSSSSSSSSS                                                                           jjjj                     
  SS:::::::::::::::S                                                                         j::::j                    
 S:::::SSSSSS::::::S                                                                          jjjj                     
@@ -25,6 +24,5 @@ S:::::::::::::::SS n::::n    n::::n oo:::::::::::oo   ee:::::::::::::e   p::::::
                                                                         p:::::::pj::::::jjj::::::j                    
                                                                         p:::::::p jj::::::::::::j                     
                                                                         ppppppppp   jjj::::::jjj                      
-                                                                                       jjjjjj """)
-
-
+                                                                                       jjjjjj
+""")

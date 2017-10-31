@@ -105,11 +105,3 @@ for extension in [tex, cmakelists]:
     all_file_substitute(extension, search_dir, backup_dir)
 
 print("Done.")
-
-
-
-
-
-
-
-

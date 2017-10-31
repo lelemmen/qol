@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-
-
 print("""
 MMMMMMMM               MMMMMMMMIIIIIIIIII               AAA           UUUUUUUU     UUUUUUUUWWWWWWWW                           WWWWWWWW
 M:::::::M             M:::::::MI::::::::I              A:::A          U::::::U     U::::::UW::::::W                           W::::::W
