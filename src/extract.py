@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
 
 # Extracts any of the following files:
-#   .tar, .tar.gz, .zip
+#   .tar, .tar.gz, tar.xz, .zip
 
 import tarfile
 import zipfile
+import argparse
 
 
 # Parse the argument
-import argparse
 parser = argparse.ArgumentParser(description="Extracts a given file.")
 parser.add_argument('filename', type=str, help="the path to the file you want to extract")
 arguments = parser.parse_args()
-
 filename = arguments.filename
 
 
 print("Trying to extract the given file ...")
 
-if filename.endswith('.tar.gz') or filename.endswith('.tar'):
+if filename.endswith('.tar.gz') or filename.endswith('.tar') or filename.endswith('tar.xz'):
     with tarfile.open(filename) as tarf:
         tarf.extractall()
 elif filename.endswith('.zip'):
