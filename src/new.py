@@ -38,6 +38,12 @@ print("Copying files from {} into {} ...".format(qol_dir + '/docs/c++_library_te
 print("Customizing the preset template ...")
 all_template_filenames = glob.glob(qol_dir + '/docs/c++_library_template/**', recursive=True)  # the pattern “**” will match any files and zero or more directories and subdirectories
 
+# Filenames starting with a dot are special cases that are not matched, so we'll have to add them manually
+hidden_filenames = glob.glob(qol_dir + '/docs/c++_library_template/.*')
+for hidden_filename in hidden_filenames:
+    all_template_filenames.append(hidden_filename)
+
+# Copy the contents of every input file into the output file, but replace every occurrence of &PROJECT_NAME&
 for filename in all_template_filenames:
     if '.' not in filename:  # this is a check if we're working with files, not directories
         continue
