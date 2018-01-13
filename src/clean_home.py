@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/opt/local/bin/python3
 
 # Clean my ~/Documents/ folder from League of Legends and Mathematica folders
 
