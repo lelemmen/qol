@@ -95,7 +95,7 @@ if not os.path.isdir(backup_dir):
 tex = Extension('.tex', patterns=[re.compile(r'\\bibliography{.*_bib}.*'), re.compile(r'\\bibliography{.*\.bib}.*')],
                 replace_with=r'\\bibliography{{{}}}'.format(bib_path), absolute=True)  # for the .tex-files, the absolute path is OK to use FIXME: I think
 
-cmakelists = Extension('CMakeLists.txt', patterns=[re.compile(r'BIBFILES.*_bib'), re.compile(r'BIBFILES.*\.bib')], replace_with=r'BIBFILES {}',
+cmakelists = Extension('CMakeLists.txt', patterns=[re.compile(r'"BIBFILES.*_bib"'), re.compile(r'"BIBFILES.*\.bib"')], replace_with=r'BIBFILES "{}"',
                        absolute=False)  # for any CMakeLists.txt files, a relative path is needed
 
 
