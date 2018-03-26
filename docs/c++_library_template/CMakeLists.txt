@@ -7,6 +7,8 @@ project(&PROJECT_NAME&
         VERSION 0.1.0
         LANGUAGES CXX)
 
+
+
 # To enable the C++11 standard, we have to add flags like -std=gnu+11 or so. CMake can take care of this:
 set(CMAKE_CXX_STANDARD 11)
 
@@ -18,12 +20,18 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 
+
 # Set CMake variables
 include(${CMAKE_SOURCE_DIR}/cmake/SetCMakeEnvironment.cmake)
 
 
+
 # Find all required packages
 include(${CMAKE_SOURCE_DIR}/cmake/FindPackages.cmake)
+
+
+
+message(STATUS "Building ${LIBRARY_NAME} for ${CMAKE_BUILD_TYPE}")
 
 
 
