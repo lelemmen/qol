@@ -8,9 +8,9 @@ import shutil
 
 
 # Get the personal temporary directory from the environment
-tmp_directory_path = os.environ["PERS_TEMP_DIR"]
-cpp_tmp_dir = os.path.join(tmp_directory_path, "C++")
-python_tmp_dir = os.path.join(tmp_directory_path, "Python")
+tmp_directory_path = "/Users/laurentlemmens/Software/tmp"
+cpp_tmp_dir = os.path.join(tmp_directory_path, 'C++')
+python_tmp_dir = os.path.join(tmp_directory_path, 'Python')
 
 
 # Remove everything that's in it
