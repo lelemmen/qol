@@ -7,7 +7,7 @@
 			<string>com.local.clrtmp</string>
 		<key>Program</key>
 			<string>/Users/laurentlemmens/Software/qol/src/clrtmp.py</string>
-		<key>StartInterval</key>
-			<integer>3600</integer>
+		<key>RunAtLoad</key>
+			<true/>
 	</dict>
 </plist>
