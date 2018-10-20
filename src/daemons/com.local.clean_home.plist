@@ -9,7 +9,5 @@
 			<string>/Users/laurentlemmens/Software/qol/src/clean_home.py</string>	
 		<key>RunAtLoad</key>
 			<true/>
-        <key>KeepAlive</key>
-            <true/>
 	</dict>
 </plist>
