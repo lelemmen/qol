@@ -4,14 +4,14 @@
 <plist version="1.0">
 	<dict>
 		<key>Label</key>
-			<string>com.local.autocommit</string>
+		    <string>com.local.autocommit</string>
         <key>WatchPaths</key>
 			<array>
 			    <string>/Users/laurentlemmens/Documents/Archief/Bibliotheek/bibfile/library.bib</string>
 			</array>
 		<key>ProgramArguments</key>
 		    <array>
-		        <string>/Users/laurentlemmens/Software/qol/src/autocommit.py</string>
+			    <string>/Users/laurentlemmens/Software/qol/src/autocommit/autocommit.py</string>
 		        <string>/Users/laurentlemmens/Documents/Archief/Bibliotheek/bibfile</string>
 		    </array>
 	</dict>

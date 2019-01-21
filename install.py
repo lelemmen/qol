@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/laurentlemmens/miniconda/bin/python3
 
 
 
@@ -7,7 +7,6 @@ import glob
 import os
 from os.path import expanduser
 from sys import platform
-import subprocess
 
 
 
@@ -44,7 +43,7 @@ qol_dir = os.path.dirname(os.path.realpath(__file__))
 
 
 # Install python scripts
-for script_py in glob.iglob(qol_dir + '/src/*.py', recursive=True):
+for script_py in glob.iglob(qol_dir + '/src/*/*.py', recursive=True):
     script_without_extension = os.path.basename(script_py.replace('.py', ''))
 
     # Create symlinks for every script, overwriting previous ones
@@ -60,12 +59,12 @@ if install_dir not in os.environ['PATH'].split(':'):
           "that directory to your PATH".format(install_dir=install_dir))
 
 
-# If on macOS, create symlinks for the Daemons and activate them
+# If on macOS, create symlinks for the Daemons
 if platform == 'darwin':
     home = expanduser('~')
     daemon_directory = home + "/Library/LaunchAgents"
 
-    for daemon_file_name in glob.iglob(qol_dir + '/src/daemons/*.plist', recursive=True):
+    for daemon_file_name in glob.iglob(qol_dir + '/src/*/*.plist', recursive=True):
         base_daemon_file_name = os.path.basename(daemon_file_name)
 
         # Create symlinks for the Daemons
@@ -73,7 +72,3 @@ if platform == 'darwin':
 
         print("{target} -> {source}".format(source=daemon_file_name,
                                             target=daemon_directory + '/' + base_daemon_file_name))
-
-
-        # Activate the Daemons
-        subprocess.run(["launchctl", "load", daemon_directory + '/' + base_daemon_file_name])

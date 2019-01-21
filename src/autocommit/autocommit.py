@@ -1,4 +1,4 @@
-#!/opt/local/bin/python3
+#!/Users/laurentlemmens/miniconda/bin/python3
 
 # This script automatically adds, commits, and pushes any changes to the given directory
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/laurentlemmens/miniconda/bin/python3
 
 # This script will update the updmap.cfg-file, in order to let the font type MinionPro work again after a texlive update.
 

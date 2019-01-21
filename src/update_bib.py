@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/laurentlemmens/miniconda/bin/python3
 
 # Script that, in a given directory, replaces all occurrences of bib-file references (in .tex files and CMakeList.txt) to a given new name (that is an !!! absolute !!! path to the file)
 

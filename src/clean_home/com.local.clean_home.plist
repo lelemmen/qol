@@ -4,9 +4,9 @@
 <plist version="1.0">
 	<dict>
 		<key>Label</key>
-			<string>com.local.clrtmp</string>
+			<string>com.local.clean_home</string>
 		<key>Program</key>
-			<string>/Users/laurentlemmens/Software/qol/src/clrtmp.py</string>
+			<string>/Users/laurentlemmens/Software/qol/src/clean_home/clean_home.py</string>
 		<key>RunAtLoad</key>
 			<true/>
 	</dict>

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/laurentlemmens/miniconda/bin/python3
 
 # Extracts any of the following files:
 #   .tar, .tar.gz, tar.xz, .zip

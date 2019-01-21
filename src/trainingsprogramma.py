@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/laurentlemmens/miniconda/bin/python3
 # -*- coding: utf-8 -*-     # Om Nederlandse woorden te schrijven is utf-8 encodering nodig
 
 import random

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/laurentlemmens/miniconda/bin/python3
 
 # If the 'share - AirDrop' option isn't available anymore, running this script will re-enable it.
 

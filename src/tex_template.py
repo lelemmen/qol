@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/laurentlemmens/miniconda/bin/python3
 
 # This script makes a template LaTeX project.
 #   the first argument parsed is the name you want your LaTeX project, so we end up with project_name.tex, which is based on the latex template (template.tex).
